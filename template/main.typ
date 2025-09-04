@@ -1,101 +1,89 @@
 #import "@preview/resume-ng:1.0.0": *
 
-// Take a look at the file `template.typ` in the file panel
-// to customize this template and discover how it works.
 #show: project.with(
   title: "Resume-ng",
-  author: (name: "冯开宇"),
+  author: (name: "胡轩敏"),
   contacts: 
     (
-      "+86 188-888-8888",
-       link("mailto:loveress01@outlook.com", "loveress01@outlook.com"),  
-       link("https://blog.fkynjyq.com", "blog.fkynjyq.com"),
-       link("https://github.com", "github.com/fky2015"),  
+      "+86 137-0921-0352",
+       link("mailto:xmhu2001@mail.ustc.edu.cn", "xmhu2001@mail.ustc.edu.cn"),  
+       link("https://www.yuque.com/yuqueyonghu5pi3hd", "yuque.com/hxm"),
+       link("https://github.com/xmhu2001", "github.com/xmhu2001"),  
     )
 )
 
-#resume-section("教育经历")
+#resume-section("教育背景")
 #resume-education(
-  university: "北京理工大学",
+  university: "中国科学技术大学",
   degree: "学术型硕士研究生",
   school: "网络空间安全，网络空间安全学院",
-  start: "2021-09",
-  end: "2024-06"
+  start: "2023-09",
+  end: "2026-06"
 )[
-*GPA: 3.62/4.0*，主要研究方向为#strong("拜占庭共识算法")，在分布式系统领域方面有一定的研究和工程经验。*2024年应届生*。
+- 担任2024秋季学期*操作系统课程助教*，多次获得学业奖学金
 ]
 
 #resume-education(
-  university: "北京理工大学",
+  university: "中国科学技术大学",
   degree: "工学学士",
-  school: "计算机科学与技术，计算机学院",
-  start: "2017-09",
-  end: "2021-06"
+  school: "网络空间安全，网络空间安全学院",
+  start: "2019-09",
+  end: "2023-06"
 )[
-*GPA: 3.7/4.0(专业前 3\%)*，获学业奖学金多次，全国大学生 XYZ 竞赛二等奖（2次），ZYX 竞赛三等奖。
+- *GPA: 3.51/4.3*，获专项奖学金、学业奖学金多次，*全国大学生数学竞赛一等奖*
 ]
 
 #resume-section[技术能力]
-- *语言*: 编程不受特定语言限制。常用 Rust, Golang, Python,C++； 熟悉 C, #text(fill: gray, "JavaScript")；了解 Lua, Java, #text(fill: gray, "TypeScript")。
-- *工作流*: Linux, Shell, (Neo)Vim, Git, GitHub, GitLab.
-- *其他*: 有容器化技术的实践经验，熟悉 Kubernetes 的使用。
+- *语言基础*: 常用 Golang, C++；了解 Golang slice, map 和 channel等底层实现，了解GMP模型与垃圾回收机制；熟悉C++11特性，包括智能指针等；掌握 C, Python, JavaScript。
+- *基础知识*：具备扎实的操作系统和计算机网络基础，熟悉操作系统的进程管理、内存管理以及TCP/IP、HTTP/HTTPS协议等内容。
+- *CI/CD实践*：熟悉CI/CD，基于GitHub Actions搭建自动化流水线，实现操作系统课程主页的持续部署。
+- *容器化应用*：了解Docker容器化技术，具备将项目打包为Docker镜像，优化部署流程的经历。
 
-#resume-section[工作经历]
-#resume-work(
-  company: "北京 ABCD 有限公司",
-  duty: "后端开发实习生/XXXX",
-  start: "2020.10",
-  end: "2021.03",
+#resume-section[实习经历]
+
+#resume-project(
+  title: "美团 - 核心本地商业 - 酒店旅行技术部 - 民宿研发组",
+  duty: "后端开发",
+  start: "2025-05",
+  end: "2025-09"
 )[
-- *独立负责XXX业务后端的设计、开发、测试和部署。*通过 FaaS、Kafka 等平台实现站内信模板渲染服务。向上游提供 SDK 代码，增加或升级了多种离线和在线逻辑。完成了业务对站内信的多样需求。
-- *参与 XXX 的需求分析，系统技术方案设计；完成需求开发、灰度测试、上线和监控。*
+
+工作职责：参与民宿房东端业务需求研发，如房源实拍视频、IM 内容风控等，；参与系统日常稳定性治理，包括慢查询、NPE等问题，保障服务稳定运行
+
+主要工作：
+
+- 参与房源卫生承诺保障活动开发，对于设置的卫生保障政策，采用 Cache Aside 模式保障高频场景下的数据一致性，并引入消息队列对业务流程进行异步解耦
+
+- 增强 IM 内容审核链路，构建了基于消息队列与事件驱动的异步风控方案。通过运用工厂模式与策略模式实现多业务、多类型内容的审核逻辑解耦
+
+- 开发房源实拍视频功能，。目前线上实拍房源80000+，实拍视频订单覆盖率8%，增量平稳
+
 ]
+
+#resume-section[开源经历]
+
+参与蚂蚁集团开源项目 agentUniverse 与阿里国际开源项目 Agentic-ADK 的功能扩展与组件贡献
+
+- 实现基于 Jina 的 Rerank 组件，优化 RAG 检索结果排序
+- 集成 Weaviate 向量数据库，支持高效存储与检索，增强大规模语义搜索与知识管理能力
+- 贡献 YouTube Tool，支持 LLM 通过 tool call 调用获取 YouTube 相关数据
 
 #resume-section[项目经历]
 
 #resume-project(
-  title: "BusTub 基于 C++ 的简易单机数据库",
-  duty: "算法设计与实现 / CMU 15-445 课程",
+  title: "仿抖音短视频",
+  duty: "Golang, 微服务, Redis, MySQL",
 )[
-  - 实现了基于可扩展哈希表和LRU-K的内存池管理。实现了可并发的B+树，支持乐观加锁的读写操作。
-  - 采用火山模型实现了查询、修改、连接、聚合等查询执行器，对部分查询进行了改写与下推。
-  - 采用 2PL 进行并发控制，支持死锁处理、多种隔离级别、表锁和行锁。
-  - 对数据库系统有了基本的认识和实践。
-]
-
-#resume-project(
-  title: "Multi-Raft 分布式 KV 存储系统",
-  duty: "算法设计与实现 / MIT 6.824 课程",
-)[
-  - 实现了 Raft 协议的选举、日志复制、持久化、日志压缩等基本功能。
-  - 基于 Raft 协议实现了满足线性一致性的 KV 数据库。
-  - 采用 Multi-Raft 架构，支持数据分片，分片迁移，分片垃圾回收和分片迁移时读写优化。
-  - 对分布式系统的设计考量有了更多的认识。
-]
-
-#resume-project(
-  title: "ZYX 平台下的某某共识算法设计与实现",
-  duty: "共识算法设计与实现",
-  start: "2021.11",
-  end: "2022.07",
-)[
-  - 根据 ZYX (Rust 实现的开源区块链框架) 的架构，*修改并实现某某某共识算法*。
-  - 针对系统进行性能测试，分析瓶颈，并优化吞吐量；TPS 由 1K 达到 6K。
-  - 此项目为实验室研究项目的一部分。
-]
-
-#resume-project(
-  title: "BIThesis 北京理工大学毕设模板集合(开源项目)",
-  duty: "主要维护者（开源项目）",
-  start: "2020.04",
-)[
-  - 根据相关排版要求，*利用 LaTeX3 (expl3) 设计了同时符合各个学位要求且支持灵活配置的宏包及多套模板*。
-  - 需求开发和问题修复采用标准工作流，引入了回归测试与基于 GitHub Actions 的测试与持续集成。
-  - 负责了什么什么；完成了怎样的结果。
+  
+  *项目描述：*
+  本项目是基于微服务开发的短视频项目，实现了视频观看、视频互动、用户社交、搜索等功能，并且在项目开发过程中考虑到了分布式、高并发与高流量问题，大数据量下仍然能提供高效可靠的音视频服务
+  
+  *亮点工作：* 
+  
 ]
 
 #resume-section[个人总结]
 
-- 本人乐观开朗、在校成绩优异、自驱能力强，具有良好的沟通能力和团队合作精神。
-- 可以使用英语进行工作交流（六级成绩 XXX），平时有阅读英文书籍和口语练习的习惯。
-- 有六年 Linux 使用经验，较为丰富的软件开发经验、开源项目贡献和维护经验。善于技术写作，持续关注互联网技术发展。
+- 本人乐观开朗、在校成绩优秀、自驱能力强，具有良好的沟通能力和团队合作精神。
+- 可以使用英语进行基本工作交流（六级成绩523），平时有阅读英文资料与书籍的习惯。
+- 有四年 Linux 使用经验，较为丰富的软件开发经验，善于通过AI工具提升代码质量与工作效率。
