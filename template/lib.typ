@@ -22,6 +22,9 @@
     
   // set text(font: "Linux Libertine", lang: "en")
   set text(font: "Noto Serif CJK SC", lang: "zh")
+  // set par(leading: 0.5em, justify: true)
+  set par(spacing: 0.90em)   // 默认≈0.65em，数值越小越紧凑
+  // set text(font: "Microsoft YaHei", lang: "zh")
     
   // Title row.
   align(center)[
