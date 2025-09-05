@@ -75,7 +75,7 @@
 
 #resume-project(
   title: "仿抖音短视频",
-  duty: "Golang, 微服务, Redis, MySQL, Kafka, ElasticSearch",
+  duty: "Golang, 微服务, Redis, MySQL, RocketMQ, ElasticSearch",
   start: "2024-09",
   end: "2024-11"
 )[
@@ -86,11 +86,11 @@
   *亮点工作：* 
   - 引入基于Redis的*分布式锁*保证用户注册、关注用户等逻辑的并发安全，确保数据一致性
 
-  - 利用Redis中的*Bitmap*数据结构特点来保存点赞信息，使用*ZSet*数据结构保存用户关注信息
+  - 通过*RocketMQ*来同步用户信息修改与视频信息修改操作到*ES索引库*，保证搜索结果的准确性与时效性
 
-  - 使用*Kafka+Redis*实现高性能的*异步*点赞，提高系统效率的同时保证点赞数据的最终一致性
+  - 利用Redis中的*ZSet*快速判断用户是否关注博主；为避免大Key问题，是否点赞则通过*Bitmap*进行高效判断
 
-  - 通过*Kafka*来*同步*用户信息修改与视频信息修改操作到*ES索引库*，保证搜索结果的准确性与时效性
+  - 使用*RocketMQ+Redis*实现高性能的*异步*点赞，消费者中使用*令牌桶算法*实现流量削峰，提高系统效率的同时保证点赞数据的最终一致性
 ]
 
 #resume-section[开源经历]
